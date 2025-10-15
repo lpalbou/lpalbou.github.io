@@ -27,6 +27,130 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Floating Contact Widget
+document.addEventListener('DOMContentLoaded', () => {
+    const floatingContact = document.getElementById('floating-contact');
+    const contactToggle = document.getElementById('contact-toggle');
+    
+    if (contactToggle && floatingContact) {
+        contactToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            floatingContact.classList.toggle('active');
+        });
+        
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!floatingContact.contains(e.target)) {
+                floatingContact.classList.remove('active');
+            }
+        });
+        
+        // Auto-hide on scroll (optional)
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            floatingContact.style.opacity = '0.7';
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                floatingContact.style.opacity = '1';
+            }, 150);
+        });
+    }
+    
+    // Initialize skills showcase
+    initializeSkillsShowcase();
+    
+    // Initialize dark mode toggle
+    initializeDarkMode();
+});
+
+// Skills Showcase Animation and Interaction
+function initializeSkillsShowcase() {
+    // Handle skill category toggle
+    const toggleButtons = document.querySelectorAll('.skill-toggle-btn');
+    const skillCategories = document.querySelectorAll('.skills-category');
+    
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.getAttribute('data-category');
+            
+            // Update active button
+            toggleButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Update active category
+            skillCategories.forEach(cat => {
+                cat.classList.remove('active');
+                if (cat.id === `${category}-skills`) {
+                    cat.classList.add('active');
+                    // Trigger animations for skill cards in the active category
+                    setTimeout(() => {
+                        animateSkillCards(cat);
+                    }, 200);
+                }
+            });
+        });
+    });
+    
+    // Initialize skill card animations
+    function animateSkillCards(container) {
+        const skillCards = container.querySelectorAll('.skill-card');
+        
+        skillCards.forEach((card, index) => {
+            // Reset animation state
+            card.classList.remove('animate');
+            const skillFill = card.querySelector('.skill-fill');
+            if (skillFill) {
+                skillFill.style.width = '0%';
+            }
+            
+            setTimeout(() => {
+                card.classList.add('animate');
+                
+                // Animate skill level bars
+                const level = card.querySelector('.skill-level').getAttribute('data-level');
+                if (skillFill && level) {
+                    setTimeout(() => {
+                        skillFill.style.width = level + '%';
+                    }, 300);
+                }
+            }, index * 100);
+        });
+    }
+    
+    // Intersection Observer for initial animation
+    const skillsShowcase = document.querySelector('.skills-showcase');
+    if (skillsShowcase) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const activeCategory = skillsShowcase.querySelector('.skills-category.active');
+                    if (activeCategory) {
+                        animateSkillCards(activeCategory);
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        observer.observe(skillsShowcase);
+    }
+}
+
+// Scroll Progress Indicator
+function updateScrollProgress() {
+    const scrollProgress = document.getElementById('scroll-progress');
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    
+    if (scrollProgress) {
+        scrollProgress.style.width = scrollPercent + '%';
+    }
+}
+
 // Navbar Scroll Effect
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
@@ -35,6 +159,9 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('scrolled');
     }
+    
+    // Update scroll progress
+    updateScrollProgress();
 });
 
 // Active Navigation Link
@@ -630,6 +757,54 @@ document.addEventListener('visibilitychange', () => {
         }
     }
 });
+
+// Dark Mode Toggle Functionality
+function initializeDarkMode() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+    
+    // Theme toggle event listener
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        });
+    }
+    
+    function setTheme(theme) {
+        body.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        
+        if (themeIcon) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+        
+        // Update Voronoi background colors for theme
+        if (window.voronoiBackground) {
+            window.voronoiBackground.updateTheme(theme);
+        }
+    }
+    
+    // Listen for system theme changes
+    if (window.matchMedia) {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        mediaQuery.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+    }
+}
 
 // Console Welcome Message
 console.log(`

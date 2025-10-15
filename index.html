@@ -24,6 +24,36 @@
 </head>
 <body>
     <!-- Navigation -->
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    
+    <!-- Floating Contact Widget -->
+    <div class="floating-contact" id="floating-contact">
+        <div class="floating-contact-toggle" id="contact-toggle">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="floating-contact-content" id="contact-content">
+            <div class="contact-options">
+                <a href="mailto:lpalbou@gmail.com" class="contact-option">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/laurent-philippe-albou/" target="_blank" class="contact-option">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/lpalbou/" target="_blank" class="contact-option">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="#contact" class="contact-option">
+                    <i class="fas fa-comment"></i>
+                    <span>Message</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-brand">
@@ -37,10 +67,15 @@
                 <a href="#photography" class="nav-link">Photography</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -111,7 +146,9 @@
                                 Université Paris-Sud<br><br>
                                 <strong>AWS Certified Solutions Architect</strong><br>
                                 <strong>AWS Certified Developer</strong><br>
-                                <em>Amazon Web Services Professional Certifications</em>
+                                <em>Amazon Web Services Professional Certifications</em><br><br>
+                                <strong>Design and Interpretation of Clinical Trials Certificate</strong><br>
+                                <em>Johns Hopkins University</em> (2016)
                             </p>
                         </div>
                         
@@ -122,8 +159,8 @@
                                 <em>International Patent USPTO/INPI</em> (2009-2010)<br><br>
                                 <strong><a href="https://patents.google.com/patent/US20120330636/fr" target="_blank" class="patent-link">Method for Characterising Three-Dimensional Objects</a></strong><br>
                                 <em>International Patent USPTO/INPI</em> (2009-2010)<br><br>
-                                <strong>Clinical Data Analysis</strong><br>
-                                <em>International Patent</em>
+                                <strong>High-fidelity synthetic data generation of clinical datasets</strong><br>
+                                <em>Patent P38713-EP</em> (2024)
                             </p>
                         </div>
                         
@@ -136,6 +173,186 @@
                                 developing next-generation methodologies for effective AI supervision and partnership.
                             </p>
                         </div>
+                        
+                    <div class="detail-item skills-showcase">
+                        <h3><i class="fas fa-brain"></i> Core Competencies</h3>
+                        <div class="skills-toggle">
+                            <button class="skill-toggle-btn active" data-category="technical">
+                                <i class="fas fa-code"></i>
+                                <span>Technical</span>
+                            </button>
+                            <button class="skill-toggle-btn" data-category="leadership">
+                                <i class="fas fa-users"></i>
+                                <span>Leadership</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Technical Skills -->
+                        <div class="skills-category active" id="technical-skills">
+                            <div class="skills-grid">
+                                <div class="skill-card" data-skill="python">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-python"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Python & AI/ML</h4>
+                                        <div class="skill-level" data-level="95">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">15+ years</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-skill="bioinformatics">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-dna"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Bioinformatics</h4>
+                                        <div class="skill-level" data-level="90">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">12+ years</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-skill="aws">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-aws"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>AWS Architecture</h4>
+                                        <div class="skill-level" data-level="85">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">8+ years</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-skill="data">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Data Science</h4>
+                                        <div class="skill-level" data-level="88">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">10+ years</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-skill="web">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Web Development</h4>
+                                        <div class="skill-level" data-level="75">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">6+ years</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-skill="research">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-microscope"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Research & Innovation</h4>
+                                        <div class="skill-level" data-level="92">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">15+ years</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Leadership Skills -->
+                        <div class="skills-category" id="leadership-skills">
+                            <div class="skills-grid">
+                                <div class="skill-card" data-skill="team-leadership">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-users-cog"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Team Leadership</h4>
+                                        <div class="skill-level" data-level="88">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">8+ years</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-skill="strategic-planning">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-chess"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Strategic Planning</h4>
+                                        <div class="skill-level" data-level="85">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">6+ years</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-skill="project-management">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-project-diagram"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Project Management</h4>
+                                        <div class="skill-level" data-level="90">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">10+ years</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-skill="mentoring">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Mentoring & Coaching</h4>
+                                        <div class="skill-level" data-level="87">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">8+ years</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-skill="innovation">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Innovation Management</h4>
+                                        <div class="skill-level" data-level="92">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">10+ years</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-card" data-skill="stakeholder">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <div class="skill-content">
+                                        <h4>Stakeholder Relations</h4>
+                                        <div class="skill-level" data-level="83">
+                                            <div class="skill-fill"></div>
+                                        </div>
+                                        <span class="skill-years">7+ years</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                         
                         <div class="detail-item">
                             <h3><i class="fas fa-heart"></i> Personal Interests</h3>
@@ -243,6 +460,14 @@
                             <h4>"PANTHER: Making genome‐scale phylogenetics accessible to all"</h4>
                             <p><em>Protein Science</em>, 2022</p>
                         </div>
+                        <div class="publication-item">
+                            <h4>"Preserving information while respecting privacy"</h4>
+                            <p><em>Nature Digital Medicine</em>, 2025 (synthetic data generation)</p>
+                        </div>
+                        <div class="publication-item">
+                            <h4>"Gene Ontology Causal Activity Modeling (GO-CAM)"</h4>
+                            <p><em>Nature Genetics</em>, 2019</p>
+                        </div>
                     </div>
                     <a href="https://scholar.google.com/citations?user=29P1njkAAAAJ&hl=en" 
                        target="_blank" class="btn btn-outline">View All Publications</a>
@@ -312,26 +537,6 @@
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>AbstractLLM</h3>
-                        <p class="project-description">
-                            A unified interface for Large Language Models with memory, reasoning, 
-                            and tool capabilities supporting multiple providers with hierarchical 
-                            memory system.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">NLP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/lpalbou/AbstractLLM" target="_blank">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="project-card">
                     <div class="project-content">

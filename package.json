@@ -1,0 +1,24 @@
+{
+  "name": "perso-website",
+  "version": "1.0.0",
+  "description": "A modern, responsive personal website showcasing Laurent-Philippe Albou's work as a research scientist, AI developer, and photographer.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpalbou/lpalbou.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lpalbou/lpalbou.github.io/issues"
+  },
+  "homepage": "https://github.com/lpalbou/lpalbou.github.io#readme",
+  "dependencies": {
+    "@playwright/test": "^1.56.0",
+    "playwright": "^1.56.0"
+  }
+}
