@@ -183,6 +183,10 @@ p {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.95);
     transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
 }
 
 .navbar.scrolled .nav-brand a {
@@ -2258,10 +2262,50 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-container {
+        height: 4.5rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-brand a {
+        font-size: 1.1rem;
+        max-width: 160px;
+    }
+    
+    .atom-logo {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .nucleus {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .orbit-1 {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .orbit-2 {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .orbit-3 {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .electron {
+        width: 3px;
+        height: 3px;
+    }
+    
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 4rem;
+        top: 4.5rem;
         flex-direction: column;
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
