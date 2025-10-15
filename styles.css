@@ -1016,6 +1016,285 @@ p {
     margin-bottom: 1.5rem !important;
 }
 
+/* Publications Grid Styling */
+.publication-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.publication-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.publication-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.publication-card:hover::before {
+    left: 100%;
+}
+
+.publication-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.publication-card.featured-pub {
+    border-left: 4px solid var(--primary-color);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.02), rgba(139, 92, 246, 0.02));
+}
+
+.pub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.pub-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pub-status.ongoing {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: white;
+}
+
+.pub-status.white-paper {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+}
+
+.pub-status.working-paper {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    color: white;
+}
+
+.pub-status.published {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.pub-year {
+    font-weight: 600;
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+.publication-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin: 0 0 0.75rem 0;
+    line-height: 1.4;
+}
+
+.pub-journal {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+}
+
+.pub-summary {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    font-size: 0.95rem;
+}
+
+.pub-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.pub-tag {
+    padding: 0.4rem 0.8rem;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary-color);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    transition: all 0.3s ease;
+}
+
+.pub-tag:hover {
+    background: rgba(37, 99, 235, 0.2);
+    transform: translateY(-1px);
+}
+
+.pub-tag.ai-research { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; border-color: rgba(139, 92, 246, 0.2); }
+.pub-tag.cognitive { background: rgba(236, 72, 153, 0.1); color: #ec4899; border-color: rgba(236, 72, 153, 0.2); }
+.pub-tag.fair { background: rgba(16, 185, 129, 0.1); color: #10b981; border-color: rgba(16, 185, 129, 0.2); }
+.pub-tag.collaboration { background: rgba(6, 182, 212, 0.1); color: #06b6d4; border-color: rgba(6, 182, 212, 0.2); }
+.pub-tag.supervision { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border-color: rgba(245, 158, 11, 0.2); }
+.pub-tag.human-ai { background: rgba(168, 85, 247, 0.1); color: #a855f7; border-color: rgba(168, 85, 247, 0.2); }
+.pub-tag.privacy { background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2); }
+.pub-tag.synthetic-data { background: rgba(34, 197, 94, 0.1); color: #22c55e; border-color: rgba(34, 197, 94, 0.2); }
+.pub-tag.genomics { background: rgba(59, 130, 246, 0.1); color: #3b82f6; border-color: rgba(59, 130, 246, 0.2); }
+.pub-tag.data-integration { background: rgba(147, 51, 234, 0.1); color: #9333ea; border-color: rgba(147, 51, 234, 0.2); }
+.pub-tag.phylogenetics { background: rgba(20, 184, 166, 0.1); color: #14b8a6; border-color: rgba(20, 184, 166, 0.2); }
+.pub-tag.bioinformatics { background: rgba(251, 146, 60, 0.1); color: #fb923c; border-color: rgba(251, 146, 60, 0.2); }
+.pub-tag.gene-ontology { background: rgba(124, 58, 237, 0.1); color: #7c3aed; border-color: rgba(124, 58, 237, 0.2); }
+.pub-tag.systems-biology { background: rgba(217, 70, 239, 0.1); color: #d946ef; border-color: rgba(217, 70, 239, 0.2); }
+
+.pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: auto;
+}
+
+.pub-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    text-decoration: none;
+    color: white;
+}
+
+.publications-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.pub-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+    font-weight: 500;
+}
+
+/* Dark theme publication cards */
+[data-theme="dark"] .publication-card {
+    background: rgba(51, 65, 85, 0.95) !important;
+    border: 1px solid rgba(71, 85, 105, 0.4) !important;
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .publication-card:hover {
+    background: rgba(51, 65, 85, 1) !important;
+    border-color: rgba(96, 165, 250, 0.4) !important;
+}
+
+[data-theme="dark"] .publication-card.featured-pub {
+    border-left: 4px solid var(--primary-color) !important;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(192, 132, 252, 0.05)) !important;
+}
+
+[data-theme="dark"] .publication-card h4 {
+    color: var(--dark-color) !important;
+}
+
+[data-theme="dark"] .pub-journal {
+    color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .pub-summary {
+    color: rgba(226, 232, 240, 0.9) !important;
+}
+
+[data-theme="dark"] .pub-year {
+    color: var(--gray-color) !important;
+}
+
+[data-theme="dark"] .publications-footer {
+    border-top: 1px solid rgba(71, 85, 105, 0.3) !important;
+}
+
+[data-theme="dark"] .stat-number {
+    color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .stat-label {
+    color: var(--gray-color) !important;
+}
+
+/* Mobile responsiveness for publications */
+@media (max-width: 768px) {
+    .publication-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .publication-card {
+        padding: 1.5rem;
+    }
+    
+    .publications-footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .pub-stats {
+        gap: 1.5rem;
+    }
+    
+    .pub-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .pub-link {
+        margin-left: 0;
+        justify-content: center;
+    }
+}
+
 /* Dark theme gradient adjustments for better readability */
 [data-theme="dark"] .skill-icon {
     background: linear-gradient(135deg, rgba(96, 165, 250, 0.8), rgba(192, 132, 252, 0.8));
