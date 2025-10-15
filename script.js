@@ -418,63 +418,6 @@ function createScrollProgress() {
 // Initialize scroll progress
 document.addEventListener('DOMContentLoaded', createScrollProgress);
 
-// Back to Top Button
-function createBackToTop() {
-    const backToTop = document.createElement('button');
-    backToTop.id = 'back-to-top';
-    backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    backToTop.style.cssText = `
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        background: var(--gradient-primary);
-        color: white;
-        border: none;
-        cursor: pointer;
-        box-shadow: var(--shadow-lg);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1001;
-        font-size: 1rem;
-    `;
-    
-    document.body.appendChild(backToTop);
-    
-    // Show/hide based on scroll position
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTop.style.opacity = '1';
-            backToTop.style.visibility = 'visible';
-        } else {
-            backToTop.style.opacity = '0';
-            backToTop.style.visibility = 'hidden';
-        }
-    });
-    
-    // Scroll to top on click
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // Hover effect
-    backToTop.addEventListener('mouseenter', () => {
-        backToTop.style.transform = 'translateY(-5px)';
-    });
-    
-    backToTop.addEventListener('mouseleave', () => {
-        backToTop.style.transform = 'translateY(0)';
-    });
-}
-
-// Initialize back to top
-document.addEventListener('DOMContentLoaded', createBackToTop);
 
 // Project Cards Hover Effect
 document.addEventListener('DOMContentLoaded', () => {

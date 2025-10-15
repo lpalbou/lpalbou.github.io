@@ -543,12 +543,12 @@ p {
     position: absolute;
     bottom: 80px;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px) saturate(180%);
     border-radius: 15px;
     padding: 1rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px) scale(0.95);
@@ -576,9 +576,27 @@ p {
     text-decoration: none;
     color: var(--dark-color);
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 0.9rem;
     min-height: 44px; /* Touch target compliance */
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact-option:hover::before {
+    left: 100%;
 }
 
 .contact-option:hover {
@@ -940,6 +958,12 @@ p {
     color: var(--text-color) !important;
 }
 
+[data-theme="dark"] .project-tagline {
+    color: var(--primary-color) !important;
+    border-left-color: var(--primary-color) !important;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(192, 132, 252, 0.1)) !important;
+}
+
 /* Dark theme research items */
 [data-theme="dark"] .research-item {
     background: rgba(51, 65, 85, 0.95) !important;
@@ -1163,6 +1187,7 @@ p {
 .pub-tag.bioinformatics { background: rgba(251, 146, 60, 0.1); color: #fb923c; border-color: rgba(251, 146, 60, 0.2); }
 .pub-tag.gene-ontology { background: rgba(124, 58, 237, 0.1); color: #7c3aed; border-color: rgba(124, 58, 237, 0.2); }
 .pub-tag.systems-biology { background: rgba(217, 70, 239, 0.1); color: #d946ef; border-color: rgba(217, 70, 239, 0.2); }
+.pub-tag.machine-learning { background: rgba(99, 102, 241, 0.1); color: #6366f1; border-color: rgba(99, 102, 241, 0.2); }
 
 .pub-link {
     display: inline-flex;
@@ -1218,6 +1243,14 @@ p {
     font-weight: 500;
 }
 
+.stat-label small {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    font-weight: 400;
+    display: block;
+    margin-top: 0.25rem;
+}
+
 /* Dark theme publication cards */
 [data-theme="dark"] .publication-card {
     background: rgba(51, 65, 85, 0.95) !important;
@@ -1261,6 +1294,11 @@ p {
 
 [data-theme="dark"] .stat-label {
     color: var(--gray-color) !important;
+}
+
+[data-theme="dark"] .stat-label small {
+    color: var(--gray-color) !important;
+    opacity: 0.7;
 }
 
 /* Mobile responsiveness for publications */
@@ -1446,6 +1484,37 @@ p {
 
 [data-theme="dark"] .footer a:hover {
     color: var(--secondary-color) !important;
+}
+
+/* Dark theme floating contact widget */
+[data-theme="dark"] .floating-contact-toggle {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 8px 25px rgba(96, 165, 250, 0.4);
+}
+
+[data-theme="dark"] .floating-contact-toggle:hover {
+    box-shadow: 0 12px 35px rgba(96, 165, 250, 0.5);
+}
+
+[data-theme="dark"] .floating-contact-content {
+    background: rgba(30, 41, 59, 0.98) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(71, 85, 105, 0.4) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .contact-option {
+    color: var(--text-color) !important;
+    background: transparent;
+}
+
+[data-theme="dark"] .contact-option::before {
+    background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.1), transparent);
+}
+
+[data-theme="dark"] .contact-option:hover {
+    background: rgba(96, 165, 250, 0.15) !important;
+    color: var(--primary-color) !important;
 }
 
 .hero-social {
@@ -1721,6 +1790,20 @@ p {
 .project-content h3 {
     color: var(--dark-color);
     margin-bottom: 1rem;
+}
+
+.project-tagline {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0.5rem 0 1rem 0;
+    font-style: italic;
+    line-height: 1.4;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(139, 92, 246, 0.05));
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
 }
 
 .project-description {
