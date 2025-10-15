@@ -456,20 +456,43 @@ function createLightbox() {
                 cursor: pointer;
             `;
             
-            const img = document.createElement('img');
-            img.src = photo.src;
-            img.style.cssText = `
-                max-width: 90%;
-                max-height: 90%;
-                object-fit: contain;
+            // Create container to maintain aspect ratio
+            const container = document.createElement('div');
+            container.style.cssText = `
+                width: 80vw;
+                height: 80vh;
+                max-width: 800px;
+                max-height: 600px;
+                position: relative;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             `;
             
-            lightbox.appendChild(img);
+            const img = document.createElement('img');
+            img.src = photo.src;
+            
+            // Get the computed styles from the thumbnail to preserve framing
+            const thumbnailStyles = window.getComputedStyle(photo);
+            const objectPosition = thumbnailStyles.objectPosition || 'center center';
+            
+            img.style.cssText = `
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: ${objectPosition};
+                display: block;
+            `;
+            
+            container.appendChild(img);
+            lightbox.appendChild(container);
             document.body.appendChild(lightbox);
             
-            // Close on click
-            lightbox.addEventListener('click', () => {
-                document.body.removeChild(lightbox);
+            // Close on click outside image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    document.body.removeChild(lightbox);
+                }
             });
             
             // Close on escape key
