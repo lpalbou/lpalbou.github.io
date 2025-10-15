@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laurent-Philippe Albou - Research Scientist & AI Architect</title>
+    <meta name="description" content="Laurent-Philippe Albou - French Research Scientist pioneering AI cognition research and human-AI collaboration frameworks. PhD in Computational Biology, creator of FAIR 2.0 principles.">
+    <meta name="keywords" content="Laurent-Philippe Albou, AI cognition, human-AI collaboration, FAIR 2.0, research scientist, AI psychology, AbstractCore, photography">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#home">Laurent-Philippe Albou</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#photography" class="nav-link">Photography</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="voronoi-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="text-highlight">Laurent-Philippe Albou</span>
+                    <span class="phd-title">, PhD</span>
+                </h1>
+                <h2 class="hero-subtitle">Research Scientist • AI Architect • Photographer</h2>
+                <p class="hero-description">
+                    French Research Scientist with PhD in Bioinformatics, pioneering research into AI cognition 
+                    and human-AI collaboration frameworks. Currently advancing breakthrough innovations at Institut 
+                    Roche while developing FAIR 2.0 principles and next-generation AI supervision methodologies.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Learn More</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/lpalbou" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://fr.linkedin.com/in/laurent-philippe-albou" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=29P1njkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://medium.com/@lpalbou" target="_blank" aria-label="Medium">
+                        <i class="fab fa-medium"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/LPA-2022.JPG" alt="Laurent-Philippe Albou" class="profile-image">
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        I am a passionate research scientist dedicated to advancing the frontiers of 
+                        artificial intelligence, human-AI collaboration, and next-generation data principles. 
+                        My recent work focuses on pioneering research into AI cognition and developing 
+                        frameworks for effective human-AI partnerships.
+                    </p>
+                    
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <p>
+                                <strong>PhD in Computational Biology</strong> (2010)<br>
+                                University of Strasbourg - Graduated with highest honors<br><br>
+                                <strong>Master's in Bioinformatics and Statistics</strong> (2006)<br>
+                                Université Paris-Sud
+                            </p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3><i class="fas fa-briefcase"></i> Current Role</h3>
+                            <p>
+                                <strong>Scientific Project Manager</strong> at Institut Roche (since 2021)<br>
+                                Leading breakthrough innovations in data structuring, FAIR 2.0 principles, and 
+                                human-AI collaboration frameworks. Pioneering research into AI cognition and 
+                                developing next-generation methodologies for effective AI supervision and partnership.
+                            </p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3><i class="fas fa-heart"></i> Personal Interests</h3>
+                            <p>
+                                Beyond my professional work, I am deeply fascinated by astronomy, 
+                                consciousness studies, adaptive planning, and the philosophy of memory. 
+                                These interests not only fuel my curiosity but inspire my research 
+                                and creative endeavors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">73+</div>
+                        <div class="stat-label">GitHub Repositories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Publications</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">AI Libraries</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Research & Publications</h2>
+            <div class="research-content">
+                <div class="research-intro">
+                    <p>
+                        My research spans the intersection of computational biology, artificial intelligence, 
+                        and data science, with a particular focus on advancing human-AI collaboration and 
+                        next-generation data principles. Recent work includes pioneering research into AI 
+                        cognition, the evolution of FAIR data principles to FAIR 2.0, and the development 
+                        of frameworks for effective human-AI supervision.
+                    </p>
+                </div>
+                
+                <div class="research-areas">
+                    <div class="research-area">
+                        <div class="area-icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <h3>Bioinformatics</h3>
+                        <p>Genome curation, pathway analysis, and data modeling for biological systems understanding.</p>
+                    </div>
+                    
+                    <div class="research-area">
+                        <div class="area-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI Cognition Research</h3>
+                        <p>Pioneering research into AI psychology, unit prompt effects, and human-AI supervision frameworks for enhanced collaboration.</p>
+                    </div>
+                    
+                    <div class="research-area">
+                        <div class="area-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>FAIR 2.0 Principles</h3>
+                        <p>Advancing the next evolution of FAIR data principles, semantic modeling, and collaborative knowledge frameworks.</p>
+                    </div>
+                    
+                    <div class="research-area">
+                        <div class="area-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Architecture</h3>
+                        <p>Scalable infrastructure design, AWS certified solutions for research computing.</p>
+                    </div>
+                </div>
+                
+                <div class="publications">
+                    <h3>Recent Research & Publications</h3>
+                    <div class="publication-list">
+                        <div class="publication-item">
+                            <h4>"The Psychology of AI: Empirical Evidence for Unit Prompt Effects on Large Language Model Cognition"</h4>
+                            <p><em>Ongoing Research - Human-AI Supervision and Cognitive Enhancement</em>, 2025</p>
+                        </div>
+                        <div class="publication-item">
+                            <h4>"Fostering Collective Knowledge: A Foundational Guide to FAIR 2.0"</h4>
+                            <p><em>White Paper - Next-generation collaborative research framework</em>, 2025</p>
+                        </div>
+                        <div class="publication-item">
+                            <h4>"Are You a Good Supervisor? A Human-AI Partnership Guide"</h4>
+                            <p><em>Working Paper - Framework for effective AI collaboration</em>, 2025</p>
+                        </div>
+                        <div class="publication-item">
+                            <h4>"Harmonizing model organism data in the Alliance of Genome Resources"</h4>
+                            <p><em>Genetics</em>, 2022</p>
+                        </div>
+                        <div class="publication-item">
+                            <h4>"PANTHER: Making genome‐scale phylogenetics accessible to all"</h4>
+                            <p><em>Protein Science</em>, 2022</p>
+                        </div>
+                    </div>
+                    <a href="https://scholar.google.com/citations?user=29P1njkAAAAJ&hl=en" 
+                       target="_blank" class="btn btn-outline">View All Publications</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-logo">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                    </div>
+                        <div class="project-content">
+                        <h3>AI Psychology Research</h3>
+                        <p class="project-description">
+                            Ongoing empirical research into "unit prompts" - minimal interventions that 
+                            dramatically alter AI cognition and reasoning patterns. Pioneering quantitative study 
+                            investigating psychology-like responses in Large Language Models.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AI Research</span>
+                            <span class="tech-tag">Cognitive Science</span>
+                            <span class="tech-tag">Human-AI Collaboration</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#research">
+                                <i class="fas fa-book"></i> Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-logo">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AbstractCore.ai</h3>
+                        <p class="project-description">
+                            A unified LLM interface providing seamless interaction with all major 
+                            language model providers. Write once, run everywhere with OpenAI, 
+                            Anthropic, Ollama, and more.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">API Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="http://www.abstractcore.ai/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Visit Site
+                            </a>
+                            <a href="https://github.com/lpalbou/AbstractLLM" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>AbstractLLM</h3>
+                        <p class="project-description">
+                            A unified interface for Large Language Models with memory, reasoning, 
+                            and tool capabilities supporting multiple providers with hierarchical 
+                            memory system.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/lpalbou/AbstractLLM" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>ForgeLLM</h3>
+                        <p class="project-description">
+                            Comprehensive toolkit for end-to-end continued pre-training, fine-tuning, 
+                            monitoring, testing and publishing of language models with MLX-LM.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MLX</span>
+                            <span class="tech-tag">Model Training</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/lpalbou/ForgeLLM" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>VoiceLLM</h3>
+                        <p class="project-description">
+                            Modular Python library for voice interactions with AI systems, 
+                            featuring high-quality TTS, STT with Whisper, and memory persistence.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Voice AI</span>
+                            <span class="tech-tag">TTS/STT</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/lpalbou/VoiceLLM" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Model Quantizer</h3>
+                        <p class="project-description">
+                            Effortlessly quantize, benchmark, and publish Hugging Face models 
+                            with cross-platform support. Reduce model size by 75% while 
+                            maintaining performance.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Model Optimization</span>
+                            <span class="tech-tag">HuggingFace</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/lpalbou/model-quantizer" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                        <div class="project-content">
+                        <h3>FAIR 2.0 Framework</h3>
+                        <p class="project-description">
+                            White paper developing the next evolution of FAIR (Findable, Accessible, 
+                            Interoperable, Reusable) data principles, advancing collective knowledge 
+                            and collaborative research practices.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Data Science</span>
+                            <span class="tech-tag">FAIR Principles</span>
+                            <span class="tech-tag">Research Framework</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#research">
+                                <i class="fas fa-book"></i> Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>LLM Benchmark Suite</h3>
+                        <p class="project-description">
+                            Comprehensive benchmark of 44+ open source language models across 
+                            creative writing, logic puzzles, and programming tasks with detailed 
+                            performance analysis.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Benchmarking</span>
+                            <span class="tech-tag">MLX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/lpalbou/llm-basic-benchmark" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="projects-footer">
+                <a href="https://github.com/lpalbou?tab=repositories" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i> View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Section -->
+    <section id="photography" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Photography</h2>
+            <p class="section-description">
+                Through photography, I explore the intersection of science and art, capturing moments 
+                that reflect my perspective on the world. From astronomical phenomena to intimate 
+                portraits, each image tells a story of curiosity and wonder.
+            </p>
+            
+            <div class="photo-gallery">
+                <div class="photo-category">
+                    <h3>Astronomy & Nature</h3>
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <img src="assets/M51 LRGB PS Ha - v2.jpg" alt="M51 Galaxy" loading="lazy">
+                            <div class="photo-overlay">
+                                <h4>M51 Whirlpool Galaxy</h4>
+                                <p>Deep space astrophotography</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="assets/sun-bw.jpg" alt="Sun" loading="lazy">
+                            <div class="photo-overlay">
+                                <h4>Solar Observation</h4>
+                                <p>High-resolution solar imaging</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="assets/m16v3.jpg" alt="Eagle Nebula" loading="lazy">
+                            <div class="photo-overlay">
+                                <h4>Eagle Nebula (M16)</h4>
+                                <p>Deep space nebula capture</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="photo-category">
+                    <h3>Urban & Architecture</h3>
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <img src="assets/IMG_9444.jpg" alt="Urban Street Photography" loading="lazy">
+                            <div class="photo-overlay">
+                                <h4>European Street Scene</h4>
+                                <p>Black and white urban photography</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="assets/IMG_6344.jpg" alt="Architecture Interior" loading="lazy">
+                            <div class="photo-overlay">
+                                <h4>Victorian Market Hall</h4>
+                                <p>Historic iron and glass architecture</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="assets/IMG_5192.jpg" alt="Park Photography" loading="lazy">
+                            <div class="photo-overlay">
+                                <h4>Tree-lined Promenade</h4>
+                                <p>Urban park life and leisure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-description">
+                I'm always open to discussing research collaborations, innovative projects, 
+                or simply sharing ideas about the fascinating intersections of science, 
+                technology, and art.
+            </p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:lpalbou@gmail.com">lpalbou@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>France</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Online</h3>
+                            <div class="social-links">
+                                <a href="https://github.com/lpalbou" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://fr.linkedin.com/in/laurent-philippe-albou" target="_blank" title="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://scholar.google.com/citations?user=29P1njkAAAAJ&hl=en" target="_blank" title="Google Scholar">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </a>
+                                <a href="https://medium.com/@lpalbou" target="_blank" title="Medium">
+                                    <i class="fab fa-medium"></i>
+                                </a>
+                                <a href="https://orcid.org/0000-0001-5801-1974" target="_blank" title="ORCID">
+                                    <i class="fab fa-orcid"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Laurent-Philippe Albou. All rights reserved.</p>
+                    <p>Research Scientist • AI Architect • Photographer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#research">Research</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#photography">Photography</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
