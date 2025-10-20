@@ -5,6 +5,48 @@ const navbar = document.getElementById('navbar');
 const contactForm = document.getElementById('contact-form');
 const navLinks = document.querySelectorAll('.nav-link');
 
+// Hide navbar brand text on mobile - AGGRESSIVE FIX
+function hideMobileNavbarText() {
+    const brandLink = document.querySelector('.nav-brand a');
+    if (brandLink) {
+        if (window.innerWidth <= 768) {
+            // Hide on mobile
+            brandLink.style.display = 'none';
+            brandLink.style.visibility = 'hidden';
+            brandLink.style.opacity = '0';
+            brandLink.style.fontSize = '0';
+            brandLink.style.width = '0';
+            brandLink.style.height = '0';
+            brandLink.style.position = 'absolute';
+            brandLink.style.left = '-9999px';
+            if (!brandLink.dataset.originalText) {
+                brandLink.dataset.originalText = brandLink.textContent;
+            }
+            brandLink.textContent = '';
+            console.log('Mobile navbar text hidden via JavaScript');
+        } else {
+            // Show on desktop
+            brandLink.style.display = '';
+            brandLink.style.visibility = '';
+            brandLink.style.opacity = '';
+            brandLink.style.fontSize = '';
+            brandLink.style.width = '';
+            brandLink.style.height = '';
+            brandLink.style.position = '';
+            brandLink.style.left = '';
+            if (brandLink.dataset.originalText) {
+                brandLink.textContent = brandLink.dataset.originalText;
+            }
+            console.log('Desktop navbar text restored via JavaScript');
+        }
+    }
+}
+
+// Apply mobile navbar fix immediately and on resize
+hideMobileNavbarText();
+window.addEventListener('resize', hideMobileNavbarText);
+window.addEventListener('load', hideMobileNavbarText);
+
 // Mobile Navigation Toggle
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
