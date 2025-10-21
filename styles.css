@@ -251,8 +251,8 @@ p {
 }
 
 .navbar.scrolled .nav-toggle {
-    background: rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .bar {
@@ -265,7 +265,7 @@ p {
 }
 
 .navbar.scrolled .bar {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 /* Animated Atom Logo */
@@ -2267,19 +2267,6 @@ p {
         padding: 0 1rem;
     }
     
-    .navbar .nav-brand a,
-    .nav-brand > a,
-    .nav-brand a[href="#home"] {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        font-size: 0 !important;
-        width: 0 !important;
-        height: 0 !important;
-        overflow: hidden !important;
-        position: absolute !important;
-        left: -9999px !important;
-    }
     
     .atom-logo {
         width: 32px;
@@ -2366,9 +2353,13 @@ p {
     }
 
     .navbar.scrolled .nav-toggle:hover {
-        background: rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 0.2);
     }
 
+    .hero {
+        padding-top: 5rem;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
